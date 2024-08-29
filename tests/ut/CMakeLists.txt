@@ -45,7 +45,7 @@ foreach(utest_path IN LISTS subdirs)
         # add test
         add_test(
             NAME ${main_name}
-            COMMAND ${main_name}
+            COMMAND $<TARGET_FILE:${main_name}>
         )
     endforeach()
 endforeach()
