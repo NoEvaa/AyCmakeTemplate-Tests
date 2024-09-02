@@ -1,10 +1,14 @@
-#ifndef TESTS_TESTLIB_SINGLETON_HPP_
-#define TESTS_TESTLIB_SINGLETON_HPP_
+#ifndef AYTEST_SINGLETON_HPP_
+#define AYTEST_SINGLETON_HPP_
 
 namespace test {
 
 template <typename T>
-struct Singleton {
+class Singleton : public T {
+    Singleton(const Singleton<T>&) = delete;
+    Singleton<T>& operator=(const Singleton<T>&) = delete;
+
+public:
     static T & getInstance() {
         static T* s_instance = nullptr;
         if(!s_instance) {

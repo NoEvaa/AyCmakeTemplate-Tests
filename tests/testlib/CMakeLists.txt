@@ -28,7 +28,7 @@ file(GLOB_RECURSE ${MODULE_NAME}_SOURCES
 
 add_library(
     ${MODULE_NAME}
-    SHARED
+    STATIC
     ${${MODULE_NAME}_HEADERS}
     ${${MODULE_NAME}_SOURCES}
 )
@@ -38,6 +38,8 @@ target_include_directories(
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+target_link_libraries(${MODULE_NAME} PUBLIC ayin::aytest)
 
 add_library(${MODULE_NS}::${MODULE_NAME} ALIAS ${MODULE_NAME})
 
