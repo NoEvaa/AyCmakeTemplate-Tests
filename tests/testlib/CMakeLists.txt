@@ -28,7 +28,7 @@ file(GLOB_RECURSE ${MODULE_NAME}_SOURCES
 
 add_library(
     ${MODULE_NAME}
-    STATIC
+    SHARED
     ${${MODULE_NAME}_HEADERS}
     ${${MODULE_NAME}_SOURCES}
 )
