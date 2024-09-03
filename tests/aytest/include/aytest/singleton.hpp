@@ -1,20 +1,21 @@
 #ifndef AYTEST_SINGLETON_HPP_
 #define AYTEST_SINGLETON_HPP_
 
-namespace test {
+namespace aytest {
 
 template <typename T>
-class Singleton : public T {
-    Singleton(const Singleton<T>&) = delete;
-    Singleton<T>& operator=(const Singleton<T>&) = delete;
+class Singleton : T {
+    Singleton(Singleton<T> const &) = delete;
+    Singleton<T> & operator=(Singleton<T> const &) = delete;
+    Singleton(Singleton<T> &&) = delete;
+    Singleton<T> & operator=(Singleton<T> &&) = delete;
+
+    Singleton() = default;
 
 public:
-    static T & getInstance() {
-        static T* s_instance = nullptr;
-        if(!s_instance) {
-            s_instance = new T;
-        }
-        return *s_instance;
+    static T & instance() {
+        static Singleton<T> s_instance;
+        return s_instance;
     }
 };
 
