@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include <aytest/singleton.hpp>
+#include <aytest/detail/singleton.hpp>
 #define CHECK(...) test::_check(static_cast<bool>(__VA_ARGS__), #__VA_ARGS__)
 struct AA
 {

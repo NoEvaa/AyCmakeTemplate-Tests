@@ -1,4 +1,4 @@
-#include <aytest/singleton.hpp>
+#include <aytest/aytest.hpp>
 #include <testlib.h>
 
 void testtt();

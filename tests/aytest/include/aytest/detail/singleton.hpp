@@ -1,5 +1,5 @@
-#ifndef AYTEST_SINGLETON_HPP_
-#define AYTEST_SINGLETON_HPP_
+#ifndef AYTEST_DETAIL_SINGLETON_HPP_
+#define AYTEST_DETAIL_SINGLETON_HPP_
 
 namespace aytest {
 

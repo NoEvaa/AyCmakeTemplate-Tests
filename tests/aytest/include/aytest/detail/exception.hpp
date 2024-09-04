@@ -1,10 +1,9 @@
-#ifndef AYTEST_EXCEPTION_HPP_
-#define AYTEST_EXCEPTION_HPP_
+#ifndef AYTEST_DETAIL_EXCEPTION_HPP_
+#define AYTEST_DETAIL_EXCEPTION_HPP_
 
 #include <string>
 
-namespace aytest {
-
+namespace aytest::detail {
 inline std::string getExceptionInfo() {
     try {
         auto ep = std::current_exception();
@@ -18,7 +17,5 @@ inline std::string getExceptionInfo() {
     }
     return "";
 }
-
-}
-
+} // aytest::detail
 #endif
