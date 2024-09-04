@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.15)
+
 # ==================================================
 # Project
 
@@ -10,6 +12,11 @@ project(
 # Module: namespace::name
 set(MODULE_NAME aytest)
 set(MODULE_NS ayin)
+
+# Options
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # ==================================================
 # Module library
