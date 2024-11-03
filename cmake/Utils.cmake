@@ -3,6 +3,10 @@
 
 # ==================================================
 # Get subdirectories of current path.
+#
+# ex.
+#     get_subdirs(${CMAKE_CURRENT_SOURCE_DIR} subdirs)
+#
 function(get_subdirs cur_path out_dirs)
     set(out_list "")
     file(GLOB children LIST_DIRECTORIES true "${cur_path}/*")

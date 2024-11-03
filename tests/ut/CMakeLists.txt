@@ -2,7 +2,7 @@
 # Unit tests
 
 project(
-    UnitTest
+    UnitTests
     LANGUAGES CXX
 )
 
@@ -13,7 +13,7 @@ foreach(utest_path IN LISTS subdirs)
     # Test files
     file(GLOB_RECURSE utest_test_files
         CONFIGURE_DEPENDS
-        "${utest_dir}/*.h"
+        #"${utest_dir}/*.h"
         "${utest_dir}/*.test.cc"
     )
 
@@ -23,7 +23,7 @@ foreach(utest_path IN LISTS subdirs)
         "${CMAKE_CURRENT_SOURCE_DIR}/${utest_dir}/*.main.cc"
     )
 
-    # Each main file will be one exec
+    # Each main file will be compiled to an executable program
     foreach(main_file IN LISTS utest_main_files)
         string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" main_rpath ${main_file})
         string(REPLACE ".main.cc" "" main_name ${main_rpath})
@@ -40,7 +40,7 @@ foreach(utest_path IN LISTS subdirs)
             ${main_name}
             PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/${utest_dir}
         )
-        target_link_libraries(${main_name} PUBLIC test::testlib)
+        target_link_libraries(${main_name} PUBLIC tests::testlib)
 
         # add test
         add_test(
