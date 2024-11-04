@@ -15,6 +15,7 @@ A cmake template for tests of C++ library.
 ```bash
 sh build.sh
 sh build.sh Release
+ctest --test-dir ./build -O ./build/Testing
 ```
 
 ## 贡献

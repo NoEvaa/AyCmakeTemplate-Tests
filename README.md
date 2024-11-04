@@ -11,6 +11,7 @@ See [AyCmakeTemplate](https://gitee.com/ayin-tech/ay-cmake-template) for more.
 ```bash
 sh build.sh
 sh build.sh Release
+ctest --test-dir ./build -O ./build/Testing
 ```
 
 ## Contributing
